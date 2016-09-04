@@ -6,6 +6,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "DEBUG=kairion-test-api* ./node_modules/.bin/nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,16 +20,22 @@
   },
   "homepage": "https://github.com/BohdanTkachenko/kairion-test-api#readme",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "body-parser": "~1.15.1",
     "config": "^1.21.0",
-    "debug": "~2.2.0",
+    "csv-parse": "^1.1.7",
+    "debug": "^2.2.0",
     "express": "~4.13.4",
+    "lodash": "^4.15.0",
+    "lowdb": "^0.13.1",
     "morgan": "~1.7.0",
+    "node-fetch": "^1.6.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
     "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-import": "^1.14.0"
+    "eslint-plugin-import": "^1.14.0",
+    "nodemon": "^1.10.2"
   }
 }

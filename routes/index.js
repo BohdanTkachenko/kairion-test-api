@@ -1,4 +1,4 @@
-require('bluebird');
+const Promise = require('bluebird');
 const _ = require('lodash');
 const express = require('express');
 const FeedService = require('../services/FeedService');
@@ -73,15 +73,35 @@ router.post('/', (req, res) => {
     }
   );
 
+  let requestHandled = false;
+  const handleRequest = (status, message) => {
+    console.log(status, message);
+
+    if (requestHandled) {
+      return;
+    }
+
+    requestHandled = true;
+    res.status(status);
+    res.json({ success: status === 200, message });
+    res.end();
+  };
+
+  Promise.delay(100)
+    .then(() => {
+      handleRequest(200, 'Feed import proccess initialized. '
+        + 'It can take up to several minutes to download and import feed');
+    });
+
   // run in background, as it can take a while
   FeedService.importFeed(shopName, feedUrl, csvParseOptions)
-    .catch(err => console.error(err)); // eslint-disable-line no-console
-
-  res.json({
-    success: true,
-    message: 'Feed import proccess initialized. '
-      + 'It can take up to several minutes to download and import feed',
-  });
+    .then(() => {
+      handleRequest(200, 'Feed imported successfully');
+    })
+    .catch(err => {
+      console.error(err.stack); // eslint-disable-line no-console
+      handleRequest(400, err.message);
+    });
 });
 
 router.get('/shops', (req, res) => {

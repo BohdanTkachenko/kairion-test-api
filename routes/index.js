@@ -84,4 +84,9 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/shops', (req, res) => {
+  const shops = DatabaseService.getShops();
+  res.json(shops);
+});
+
 module.exports = router;

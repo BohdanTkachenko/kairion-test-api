@@ -33,6 +33,15 @@ class DatabaseService {
     debug(`${i} products successfully imported to database`);
   }
 
+  static getShops() {
+    debug('Finding all shops...');
+
+    return db.get('products')
+      .map(product => product.shopName)
+      .uniq()
+      .value();
+  }
+
   static getProducts(shopName) {
     debug(`Finding all products for shop ${shopName}...`);
 

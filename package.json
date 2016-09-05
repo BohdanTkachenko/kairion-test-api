@@ -3,12 +3,6 @@
   "name": "kairion-test-api",
   "version": "1.0.0",
   "description": "Kairion test assignment (server-side part)",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "DEBUG=kairion-test-api* ./node_modules/.bin/nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BohdanTkachenko/kairion-test-api.git"
@@ -19,6 +13,12 @@
     "url": "https://github.com/BohdanTkachenko/kairion-test-api/issues"
   },
   "homepage": "https://github.com/BohdanTkachenko/kairion-test-api#readme",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "DEBUG=kairion-test-api* ./node_modules/.bin/nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "~1.15.1",

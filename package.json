@@ -21,21 +21,21 @@
   },
   "dependencies": {
     "bluebird": "^3.4.6",
-    "body-parser": "~1.15.1",
+    "body-parser": "~1.16.0",
     "config": "^1.21.0",
     "csv-parse": "^1.1.7",
     "debug": "^2.2.0",
-    "express": "~4.13.4",
+    "express": "~4.14.0",
     "lodash": "^4.15.0",
-    "lowdb": "^0.13.1",
+    "lowdb": "^0.14.0",
     "morgan": "~1.7.0",
     "node-fetch": "^1.6.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
-    "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-import": "^1.14.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
     "nodemon": "^1.10.2"
   }
 }
